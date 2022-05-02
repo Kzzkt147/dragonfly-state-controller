@@ -20,26 +20,10 @@ public class EnemyController : MonoBehaviour {
 
     private void Update() {
         currentState.UpdateState(this);
-        HandleConditional();
-        
-
     }
 
-    private void ChangeState(State nextState) {
+    public void ChangeState(State nextState) {
         currentState = nextState;
         currentState.StartState(this);
-    }
-
-    private void HandleConditional() {
-        if(currentState.UpdateDecision(this)) {
-            
-            if(currentState.transition.trueState == null) return;
-            ChangeState(currentState.transition.trueState);
-        } 
-        else {
-            
-            if(currentState.transition.falseState == null) return;
-            ChangeState(currentState.transition.falseState);
-        }
     }
 }
