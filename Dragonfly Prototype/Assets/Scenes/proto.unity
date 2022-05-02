@@ -3546,6 +3546,7 @@ GameObject:
   - component: {fileID: 1321772777}
   - component: {fileID: 1321772776}
   - component: {fileID: 1321772774}
+  - component: {fileID: 1321772778}
   - component: {fileID: 1321772773}
   - component: {fileID: 1321772775}
   m_Layer: 6
@@ -3611,6 +3612,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 6b24c0017792cb0419ff0339b7a33818, type: 2}
   currentState: {fileID: 11400000, guid: 71848071dbc8ebb4fbbdcd93a9c4bb52, type: 2}
+  seeDistance: 6.1
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  target: {fileID: 0}
+  myRigidbody: {fileID: 1321772778}
 --- !u!212 &1321772776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3676,6 +3683,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1321772778
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321772772}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1639210487
 GameObject:
   m_ObjectHideFlags: 0

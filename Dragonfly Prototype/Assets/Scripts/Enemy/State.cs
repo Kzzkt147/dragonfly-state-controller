@@ -29,6 +29,12 @@ public class State : ScriptableObject {
         CheckForTransitions(controller);
     }
 
+    public void FixedUpdateState(EnemyController controller) {
+        for (int i = 0; i < actions.Length; i++) {
+            actions[i].FixedUpdateAction(controller);
+        }
+    }
+
     private void CheckForTransitions(EnemyController controller) {
         
         foreach (var transition in transitions) {

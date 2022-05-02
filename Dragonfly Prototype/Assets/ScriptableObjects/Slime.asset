@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   maxHealth: 5
-  walkSpeed: 2
-  runSpeed: 1.2
+  walkSpeed: 1.2
+  runSpeed: 2
   attackDelay: 1

@@ -6,7 +6,10 @@ using UnityEngine;
 public class SeeDecision : Decision {
 
     public override bool HandleDecision(EnemyController controller) {
-        //CODE TO CHECK IF ENEMY SEES TARGET - IF IT DOES, RETURN TRUE - ELSE RETURN FALSE
+        
+        if(controller.CanSeeTarget()) {
+            return true;
+        }
         
         return false;
     }

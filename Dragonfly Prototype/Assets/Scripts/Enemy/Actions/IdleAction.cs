@@ -14,4 +14,8 @@ public class IdleAction : Action {
     public override void UpdateAction(EnemyController controller) {
         Debug.Log("In Idle");
     }
+
+    public override void FixedUpdateAction(EnemyController controller) {
+     
+    }
 }

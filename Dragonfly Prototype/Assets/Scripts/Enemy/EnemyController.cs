@@ -13,6 +13,11 @@ public class EnemyController : MonoBehaviour {
     public EnemyStats stats;
     public State currentState;
 
+    public float seeDistance;
+    public LayerMask enemyLayers;
+
+    [HideInInspector] public Transform target;
+    public Rigidbody2D myRigidbody;
 
     private void Start() {
         currentState.StartState(this);
@@ -21,9 +26,29 @@ public class EnemyController : MonoBehaviour {
     private void Update() {
         currentState.UpdateState(this);
     }
+    
+    private void FixedUpdate() {
+        currentState.FixedUpdateState(this);
+    }
 
     public void ChangeState(State nextState) {
         currentState = nextState;
         currentState.StartState(this);
+    }
+
+
+    public bool CanSeeTarget() {
+        Collider2D[] viewableTargets = Physics2D.OverlapCircleAll(transform.position, seeDistance, enemyLayers);
+        if(viewableTargets.Length != 0) {
+            target = viewableTargets[0].transform;
+            return true;
+        } 
+        else return false;
+
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, seeDistance);
     }
 }
