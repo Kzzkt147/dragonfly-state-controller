@@ -3609,8 +3609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed6be2139e21df4b8eb2f1b72e9cd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  currentState: {fileID: 0}
+  stats: {fileID: 11400000, guid: 6b24c0017792cb0419ff0339b7a33818, type: 2}
+  currentState: {fileID: 11400000, guid: 71848071dbc8ebb4fbbdcd93a9c4bb52, type: 2}
 --- !u!212 &1321772776
 SpriteRenderer:
   m_ObjectHideFlags: 0
