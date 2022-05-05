@@ -20,6 +20,9 @@ public class EnemyController : MonoBehaviour {
     public float seeDistance;
     public float attackDistance;
     public LayerMask enemyLayers;
+    
+    [HideInInspector] public bool canAttack = true;
+    private float _cooldownTimer;
 
     [HideInInspector] public Transform target;
     [HideInInspector] public Rigidbody2D myRigidbody;
@@ -34,6 +37,8 @@ public class EnemyController : MonoBehaviour {
 
     private void Update() {
         currentState.UpdateState(this);
+        
+        HandleAttackCooldown();
     }
     
     private void FixedUpdate() {
@@ -51,5 +56,16 @@ public class EnemyController : MonoBehaviour {
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackDistance);
+    }
+
+    private void HandleAttackCooldown() {
+        if(!canAttack) {
+            _cooldownTimer += Time.deltaTime;
+
+            if(_cooldownTimer >= stats.attackDelay) {
+                _cooldownTimer = 0;
+                canAttack = true;
+            }
+        }
     }
 }

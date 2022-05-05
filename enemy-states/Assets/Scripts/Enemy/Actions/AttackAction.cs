@@ -9,7 +9,12 @@ public class AttackAction : Action {
         Debug.Log("Entered Attack State");
     }
     public override void UpdateAction(EnemyController controller) {
-        Debug.Log("In Attack");
+        if(controller.canAttack) {
+            if(controller.target.GetComponent<ITakeDamage>() == null) return;
+
+            controller.target.GetComponent<ITakeDamage>().TakeDamage(controller.stats.damage);
+            controller.canAttack = false;
+        }
     }
     public override void FixedUpdateAction(EnemyController controller) {
 

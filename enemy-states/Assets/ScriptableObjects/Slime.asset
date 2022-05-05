@@ -16,3 +16,4 @@ MonoBehaviour:
   walkSpeed: 1.2
   runSpeed: 2
   attackDelay: 1
+  damage: 2
