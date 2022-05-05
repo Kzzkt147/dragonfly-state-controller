@@ -37,17 +37,11 @@ public class State : ScriptableObject {
 
     private void CheckForTransitions(EnemyController controller) {
         
-        foreach (var transition in transitions) {
-            bool decision = transition.decision.HandleDecision(controller);
-            
-            if(decision) {
-                if(transition.trueState == null) return;
-                controller.ChangeState(transition.trueState);
-            } 
-            else {
-                if(transition.falseState == null) return;
-                controller.ChangeState(transition.falseState);
-            } 
+        for (int i = 0; i < transitions.Length; i++) {
+            bool decision = transitions[i].decision.HandleDecision(controller);
+        
+            if(decision && transitions[i].trueState != null) controller.ChangeState(transitions[i].trueState);
+            if(!decision && transitions[i].falseState != null) controller.ChangeState(transitions[i].falseState);
         }
     }
 

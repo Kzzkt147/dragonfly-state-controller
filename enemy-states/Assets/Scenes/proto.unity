@@ -3612,7 +3612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 6b24c0017792cb0419ff0339b7a33818, type: 2}
   currentState: {fileID: 11400000, guid: 71848071dbc8ebb4fbbdcd93a9c4bb52, type: 2}
-  seeDistance: 6.1
+  seeDistance: 6
+  attackDistance: 1.3
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128

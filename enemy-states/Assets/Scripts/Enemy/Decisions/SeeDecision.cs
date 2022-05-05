@@ -6,12 +6,16 @@ using UnityEngine;
 public class SeeDecision : Decision {
 
     public override bool HandleDecision(EnemyController controller) {
-        
-        if(controller.CanSeeTarget()) {
+        return CanSeeTarget(controller);
+    }
+
+    private bool CanSeeTarget(EnemyController controller) {
+        Collider2D[] viewableTargets = Physics2D.OverlapCircleAll(controller.transform.position, controller.seeDistance, controller.enemyLayers);
+        if(viewableTargets.Length != 0) {
+            controller.target = viewableTargets[0].transform;
             return true;
-        }
-        
-        return false;
+        } 
+        else return false;
     }
  
 }

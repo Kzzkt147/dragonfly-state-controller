@@ -10,14 +10,23 @@ It will run the Update and Start functions of the current state only.
 
 public class EnemyController : MonoBehaviour {
 
+    [Header("Enemy Stats")]
     public EnemyStats stats;
+
+    [Header("State")]
     public State currentState;
 
+    [Header("Targetting")]
     public float seeDistance;
+    public float attackDistance;
     public LayerMask enemyLayers;
 
     [HideInInspector] public Transform target;
-    public Rigidbody2D myRigidbody;
+    [HideInInspector] public Rigidbody2D myRigidbody;
+
+    private void Awake() {
+        myRigidbody = GetComponent<Rigidbody2D>();
+    }
 
     private void Start() {
         currentState.StartState(this);
@@ -36,19 +45,11 @@ public class EnemyController : MonoBehaviour {
         currentState.StartState(this);
     }
 
-
-    public bool CanSeeTarget() {
-        Collider2D[] viewableTargets = Physics2D.OverlapCircleAll(transform.position, seeDistance, enemyLayers);
-        if(viewableTargets.Length != 0) {
-            target = viewableTargets[0].transform;
-            return true;
-        } 
-        else return false;
-
-    }
-
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, seeDistance);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }
