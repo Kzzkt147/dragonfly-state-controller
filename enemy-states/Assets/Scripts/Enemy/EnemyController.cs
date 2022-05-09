@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour {
     public EnemyStats stats;
 
     [Header("State")]
-    public State currentState;
+    public StateGraph graph;
 
     [Header("Targetting")]
     public float seeDistance;
@@ -32,22 +32,22 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void Start() {
-        currentState.StartState(this);
+        graph.currentState.StartState(this);
     }
 
     private void Update() {
-        currentState.UpdateState(this);
+        graph.currentState.UpdateState(this);
         
         HandleAttackCooldown();
     }
     
     private void FixedUpdate() {
-        currentState.FixedUpdateState(this);
+        graph.currentState.FixedUpdateState(this);
     }
 
-    public void ChangeState(State nextState) {
-        currentState = nextState;
-        currentState.StartState(this);
+    public void ChangeState(StateNode nextState) {
+        graph.currentState = nextState;
+        graph.currentState.StartState(this);
     }
 
     private void OnDrawGizmosSelected() {
