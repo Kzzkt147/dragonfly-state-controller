@@ -5,5 +5,5 @@ using XNode;
 
 [CreateAssetMenu]
 public class BehaviourGraph : NodeGraph { 
-	
+	public BaseNode currentNode;
 }

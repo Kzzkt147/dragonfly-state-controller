@@ -5,13 +5,19 @@ using UnityEngine;
 public class StateNode : BaseNode {
     
     [Input] public int entry;
-    //[Output] public int exit;
+    
+
 
     public Action action;
+
+    public Transition transition;
+
+    [Output] public int exitTrue;
+    [Output] public int exitFalse;
     
     // return info on current node
 	public override string GetString() {
-		return "State/";
+		return "State";
 	}
 
 	
