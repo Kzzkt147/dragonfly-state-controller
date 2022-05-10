@@ -8,4 +8,5 @@ public class Transition {
 
     public Decision decision;
 
+    [Node.Output] public int trueState;
 }

@@ -3547,8 +3547,6 @@ GameObject:
   - component: {fileID: 1321772776}
   - component: {fileID: 1321772774}
   - component: {fileID: 1321772778}
-  - component: {fileID: 1321772775}
-  - component: {fileID: 1321772773}
   m_Layer: 6
   m_Name: Slime
   m_TagString: Untagged
@@ -3556,22 +3554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1321772773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321772772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f60617843ac29141b13edc07b0813f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 10
-  maxHealth: 10
-  hitSound: {fileID: 8300000, guid: c7775830e8bdb764ca102d228788c014, type: 3}
-  audioInstance: {fileID: 6157089108797851003, guid: 18ebf10a9ccd036408519e7f54200871, type: 3}
 --- !u!61 &1321772774
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3598,19 +3580,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1321772775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321772772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e8c30552f44924e8169d5729d71737, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graph: {fileID: 0}
 --- !u!212 &1321772776
 SpriteRenderer:
   m_ObjectHideFlags: 0

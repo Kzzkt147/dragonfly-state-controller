@@ -30,13 +30,13 @@ public class StateController : MonoBehaviour {
                 break;
             case "State":
                 StateNode currentNode = graph.currentNode as StateNode;
-                yield return new WaitUntil(() => currentNode.transition.decision.HandleDecision(this) == true);
+                yield return new WaitUntil(() => currentNode.transitions[0].decision.HandleDecision(this) == true);
                 break;
             case "End":
                 break;
         }
 
-        return null;
+        yield return null;
     }
 
     private void NextNode(string portFieldName) {

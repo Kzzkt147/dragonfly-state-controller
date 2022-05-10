@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XNode;
 
 public class StateNode : BaseNode {
     
     [Input] public int entry;
-    
+
+    public Action[] actions;
+
+    public Transition[] transitions;
 
 
-    public Action action;
-
-    public Transition transition;
-
-    [Output] public int exitTrue;
-    [Output] public int exitFalse;
-    
     // return info on current node
-	public override string GetString() {
+    public override string GetString() {
 		return "State";
 	}
 
