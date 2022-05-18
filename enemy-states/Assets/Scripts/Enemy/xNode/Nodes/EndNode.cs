@@ -10,11 +10,12 @@ public class EndNode : BaseNode
 		return "End";
 	}
 
-	// will update any actions and transitions of the node when active
-	public override void UpdateActions() {
-
+    public override void StartActions(StateController controller) {
     }
-	public override void UpdateTransitions() {
 
+    public override void UpdateActions(StateController controller) {
+    }
+
+    public override void UpdateTransitions(StateController controller) {
     }
 }

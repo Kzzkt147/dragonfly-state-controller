@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "IdleAction")]
+[CreateAssetMenu(menuName = "Enemy/Actions/IdleAction", fileName = "IdleAction")]
 public class IdleAction : Action {
 
     public override void StartActions(StateController controller) {

@@ -9,14 +9,15 @@ public abstract class BaseNode : Node {
 	public virtual string GetString() {
 		return null;
 	}
-
-	// will update any actions and transitions of the node when active
-	public abstract void UpdateActions();
-	public abstract void UpdateTransitions();
 	
 
 	// default implimentation of xnode method -- can ignore
 	public override object GetValue(NodePort port) {
 		return null;
 	}
+
+	// will update any actions and transitions of the node when active
+	public abstract void StartActions(StateController controller);
+	public abstract void UpdateActions(StateController controller);
+	public abstract void UpdateTransitions(StateController controller);
 }
