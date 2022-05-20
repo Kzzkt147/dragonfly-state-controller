@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "Enemy/Actions/IdleAction")]
+[CreateAssetMenu(menuName = "Enemy/Actions/IdleAction", fileName = "IdleAction")]
 public class IdleAction : Action {
 
-    public override void StartAction(EnemyController controller)
-    {
-        Debug.Log("Entered Idle State");
+    public override void StartActions(StateController controller) {
+        Debug.Log("Entered Idle");
     }
-
-    public override void UpdateAction(EnemyController controller) {
-        Debug.Log("In Idle");
+    public override void UpdateActions(StateController controller) {
+        
     }
+    public override void FixedUpdateActions(StateController controller) {
 
-    public override void FixedUpdateAction(EnemyController controller) {
-     
     }
 }

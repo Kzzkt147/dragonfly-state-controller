@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy/Actions/AttackAction")]
+[CreateAssetMenu(menuName = "Enemy/Actions/AttackAction", fileName = "AttackAction")]
 public class AttackAction : Action {
 
-    public override void StartAction(EnemyController controller) {
-        Debug.Log("Entered Attack State");
-    }
-    public override void UpdateAction(EnemyController controller) {
-        if(controller.canAttack) {
-            if(controller.target.GetComponent<ITakeDamage>() == null) return;
-
-            controller.target.GetComponent<ITakeDamage>().TakeDamage(controller.stats.damage);
-            controller.canAttack = false;
-        }
-    }
-    public override void FixedUpdateAction(EnemyController controller) {
-
+    public override void StartActions(StateController controller) {
+        Debug.Log("Entered attack state");
     }
 
+    public override void UpdateActions(StateController controller) {
+        
+    }
+
+    public override void FixedUpdateActions(StateController controller) {
+        
+    }
 }

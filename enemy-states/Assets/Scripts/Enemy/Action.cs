@@ -4,9 +4,8 @@ using UnityEngine;
 
 public abstract class Action : ScriptableObject {
 
-
-    public abstract void StartAction(EnemyController controller);
-    public abstract void UpdateAction(EnemyController controller);
-    public abstract void FixedUpdateAction(EnemyController controller);
+    public abstract void StartActions(StateController controller);
+    public abstract void UpdateActions(StateController controller);
+    public abstract void FixedUpdateActions(StateController controller);
 
 }
