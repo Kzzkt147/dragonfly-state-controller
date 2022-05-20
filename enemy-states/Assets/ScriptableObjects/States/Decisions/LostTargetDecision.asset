@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0e776cdb7907b4caea4486cb8a6030, type: 3}
-  m_Name: LookDecision
+  m_Script: {fileID: 11500000, guid: e964c393133f08140829e32d277d8c18, type: 3}
+  m_Name: LostTargetDecision
   m_EditorClassIdentifier: 

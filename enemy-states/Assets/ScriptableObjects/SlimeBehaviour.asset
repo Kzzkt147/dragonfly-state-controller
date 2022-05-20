@@ -31,6 +31,9 @@ MonoBehaviour:
       - fieldName: exit
         node: {fileID: -901776790371290802}
         reroutePoints: []
+      - fieldName: decisions 0
+        node: {fileID: -6368356465869389360}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -73,11 +76,12 @@ MonoBehaviour:
   m_Name: State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: -120}
+  position: {x: 280, y: -120}
   ports:
     keys:
     - entry
     - decisions
+    - decisions 0
     values:
     - _fieldName: entry
       _node: {fileID: -6368356465869389360}
@@ -100,9 +104,24 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+    - _fieldName: decisions 0
+      _node: {fileID: -6368356465869389360}
+      _typeQualifiedName: Decision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: -7367139436759674011}
+        reroutePoints:
+        - {x: 113.33801, y: 202.429}
+        - {x: -278.662, y: 38.429}
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
   entry: 0
   action: {fileID: 11400000, guid: 07a36c7943c1e3a44a5d8e7bfa767ae0, type: 2}
-  decisions: []
+  decisions:
+  - {fileID: 11400000, guid: e2d86dac5e5ae3743bc5c45259b44fd2, type: 2}
 --- !u!114 &-901776790371290802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +135,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -392, y: -184}
+  position: {x: -392, y: -232}
   ports:
     keys:
     - exit
