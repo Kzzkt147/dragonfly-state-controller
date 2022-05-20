@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -104, y: -184}
+  position: {x: -104, y: -40}
   ports:
     keys:
     - entry
@@ -26,12 +26,9 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: exit
-        node: {fileID: 0}
-        reroutePoints: []
-      - fieldName: exit
         node: {fileID: -901776790371290802}
         reroutePoints: []
-      - fieldName: decisions 0
+      - fieldName: decisions 1
         node: {fileID: -6368356465869389360}
         reroutePoints: []
       _direction: 0
@@ -63,6 +60,65 @@ MonoBehaviour:
   action: {fileID: 11400000, guid: f2c29c305eaa51346baa4404389a19d8, type: 2}
   decisions:
   - {fileID: 11400000, guid: 820786f8fc9d8c446bd12baaacbb44a3, type: 2}
+--- !u!114 &-7000361173550477448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a626f3aff0044458806038fa8d0986, type: 3}
+  m_Name: State
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 584, y: -104}
+  ports:
+    keys:
+    - entry
+    - decisions
+    - decisions 0
+    values:
+    - _fieldName: entry
+      _node: {fileID: -7000361173550477448}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: decisions 0
+        node: {fileID: -6368356465869389360}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisions
+      _node: {fileID: -7000361173550477448}
+      _typeQualifiedName: Decision[], Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: decisions 0
+      _node: {fileID: -7000361173550477448}
+      _typeQualifiedName: Decision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: entry
+        node: {fileID: -6368356465869389360}
+        reroutePoints:
+        - {x: 784, y: -272}
+        - {x: 288, y: -256}
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  entry: 0
+  action: {fileID: 11400000, guid: 07908da1e5c8694459c41578bdde8d48, type: 2}
+  decisions:
+  - {fileID: 11400000, guid: 773e69527bea54543a79b417cfff0989, type: 2}
 --- !u!114 &-6368356465869389360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,12 +132,13 @@ MonoBehaviour:
   m_Name: State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 280, y: -120}
+  position: {x: 216, y: -168}
   ports:
     keys:
     - entry
     - decisions
     - decisions 0
+    - decisions 1
     values:
     - _fieldName: entry
       _node: {fileID: -6368356465869389360}
@@ -90,6 +147,9 @@ MonoBehaviour:
       connections:
       - fieldName: decisions 0
         node: {fileID: -7367139436759674011}
+        reroutePoints: []
+      - fieldName: decisions 0
+        node: {fileID: -7000361173550477448}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -110,10 +170,22 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: entry
+        node: {fileID: -7000361173550477448}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: decisions 1
+      _node: {fileID: -6368356465869389360}
+      _typeQualifiedName: Decision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: entry
         node: {fileID: -7367139436759674011}
         reroutePoints:
-        - {x: 113.33801, y: 202.429}
-        - {x: -278.662, y: 38.429}
+        - {x: 407.77155, y: 187.45148}
+        - {x: -96, y: 224}
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -121,6 +193,7 @@ MonoBehaviour:
   entry: 0
   action: {fileID: 11400000, guid: 07a36c7943c1e3a44a5d8e7bfa767ae0, type: 2}
   decisions:
+  - {fileID: 11400000, guid: c721068247facb24dabe61bf82544b0a, type: 2}
   - {fileID: 11400000, guid: e2d86dac5e5ae3743bc5c45259b44fd2, type: 2}
 --- !u!114 &-901776790371290802
 MonoBehaviour:
@@ -169,4 +242,5 @@ MonoBehaviour:
   - {fileID: -7367139436759674011}
   - {fileID: -901776790371290802}
   - {fileID: -6368356465869389360}
-  currentNode: {fileID: -6368356465869389360}
+  - {fileID: -7000361173550477448}
+  currentNode: {fileID: -7000361173550477448}

@@ -9,7 +9,7 @@ public class IdleAction : Action {
         Debug.Log("Entered Idle");
     }
     public override void UpdateActions(StateController controller) {
-        Debug.Log("Idle");
+        
     }
     public override void FixedUpdateActions(StateController controller) {
 

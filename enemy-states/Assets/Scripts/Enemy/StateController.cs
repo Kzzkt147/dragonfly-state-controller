@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class StateController : MonoBehaviour {
 
     public BehaviourGraph graph;
@@ -12,10 +13,43 @@ public class StateController : MonoBehaviour {
     public float seeRadius;
     public Transform target;
 
+    [Header("Attacking")]
+    public float attackRadius;
+    public bool inAttackRange = false;
+
+    [Header("Movement")]
+    public float runSpeed = 3f;
+    [HideInInspector] public Vector2 direction;
+
+    //REFERENCES
+    [HideInInspector] public Rigidbody2D rigidBody;
+
+    private void Awake() {
+        rigidBody = GetComponent<Rigidbody2D>();
+    }
+
     private void Update() {
         CheckForTarget();
+        CheckAttackRange();
         graph.currentNode.UpdateActions(this);
         graph.currentNode.UpdateTransitions(this);
+        
+    }
+
+    private void CheckAttackRange() {
+        if(target != null) {
+            Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, attackRadius, targetLayers);
+            if(targetCollider != null) {
+                inAttackRange = true;
+            }
+            else {
+                inAttackRange = false;
+            }
+        }
+    }
+
+    private void FixedUpdate() {
+        graph.currentNode.FixedUpdateActions(this);
     }
 
     private void CheckForTarget() {
@@ -78,5 +112,7 @@ public class StateController : MonoBehaviour {
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, seeRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }

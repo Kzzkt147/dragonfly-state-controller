@@ -3573,6 +3573,11 @@ MonoBehaviour:
     m_Bits: 128
   seeRadius: 5
   target: {fileID: 0}
+  attackRadius: 1.2
+  inAttackRange: 0
+  runSpeed: 2
+  direction: {x: 0, y: 0}
+  rigidBody: {fileID: 0}
 --- !u!61 &1321772774
 BoxCollider2D:
   m_ObjectHideFlags: 0

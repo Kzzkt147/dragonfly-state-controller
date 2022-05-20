@@ -26,7 +26,10 @@ public class StateNode : BaseNode {
 	public override void UpdateActions(StateController controller) {
         action.UpdateActions(controller);
     }
-	public override void UpdateTransitions(StateController controller) {
+    public override void FixedUpdateActions(StateController controller) {
+        action.FixedUpdateActions(controller);
+    }
+    public override void UpdateTransitions(StateController controller) {
 
         for(int i = 0; i < decisions.Length; i++) {
             if(decisions[i].HandleDecision(controller)) {

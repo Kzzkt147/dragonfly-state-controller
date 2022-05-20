@@ -19,5 +19,6 @@ public abstract class BaseNode : Node {
 	// will update any actions and transitions of the node when active
 	public abstract void StartActions(StateController controller);
 	public abstract void UpdateActions(StateController controller);
+	public abstract void FixedUpdateActions(StateController controller);
 	public abstract void UpdateTransitions(StateController controller);
 }

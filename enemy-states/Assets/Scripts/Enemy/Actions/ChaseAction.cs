@@ -10,11 +10,12 @@ public class ChaseAction : Action {
     }
 
     public override void UpdateActions(StateController controller) {
-        Debug.Log("Chasing");
+        if(controller.target == null) return;
+        controller.direction = ((Vector2)controller.target.position - controller.rigidBody.position).normalized;
     }
 
     public override void FixedUpdateActions(StateController controller) {
-        
+        controller.rigidBody.MovePosition(controller.rigidBody.position + controller.direction * controller.runSpeed * Time.fixedDeltaTime);
     }
 
 }
