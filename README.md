@@ -70,3 +70,21 @@ public class ExampleDecision : Decision {
 
 ### Extra Notes
 Each action and decision is s scriptable object - meaning that if two enemies share the same action as behaviour, they are sharing the same instance of that script. To make sure there are no conflicts in their behaviour, do not create any new variables in these scripts and should instead be taking everything from the state controller.
+
+# Sources
+
+### Xnode
+
+[Xnode](https://github.com/Siccity/xNode)
+
+### License
+[MIT License](LICENSE.txt)
+
+# Features Checklist
+### DONE
+- [X] Scriptable Object Actions and Decisions
+- [X] State Controller to use behaviours
+- [X] Node graph to view and create behaviours
+### TODO
+- [ ] Seperate node parser and state controller
+- [ ] More testing with different actions
