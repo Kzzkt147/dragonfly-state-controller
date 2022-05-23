@@ -57,7 +57,7 @@ public class ExampleAction : Action {
 ![Create Asset](img/CreateAsset.gif)
 
 ### Decisions
-Create a new script and inherit your class from the abstract 'Decision' class, making sure to implement the abstract methods from 'Decision'. Because this is a scriptable object, add a 'CreateAssetMenu' attribute and create an instance of the class as an object.
+Create a new script and inherit your class from the abstract 'Decision' class, making sure to implement the abstract methods from 'Decision'. Because this is a scriptable object, add a 'CreateAssetMenu' attribute and create an instance of the class as an object. When returning true, the state controller will change the current state to the state that is connected to this decision.
 ```cs
 [CreateAssetMenu(menuName = "Enemy/Decisions/ExampleDecision", fileName = "ExampleDecision")]
 public class ExampleDecision : Decision {
