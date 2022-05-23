@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e64460abac4452b449e87396feb7c345, type: 3}
-  m_Name: SlimeBehaviour
+  m_Name: ExampleBehaviour
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -7367139436759674011}

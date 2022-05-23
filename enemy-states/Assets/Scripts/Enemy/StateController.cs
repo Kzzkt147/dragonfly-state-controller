@@ -11,11 +11,11 @@ public class StateController : MonoBehaviour {
     [Header("Targetting")]
     public LayerMask targetLayers;
     public float seeRadius;
-    public Transform target;
+    [HideInInspector] public Transform target;
 
     [Header("Attacking")]
     public float attackRadius;
-    public bool inAttackRange = false;
+    [HideInInspector] public bool inAttackRange = false;
 
     [Header("Movement")]
     public float runSpeed = 3f;
@@ -29,11 +29,28 @@ public class StateController : MonoBehaviour {
     }
 
     private void Update() {
+        // check for conditionals
         CheckForTarget();
         CheckAttackRange();
+        
+        // update current nodes actions and transitions
         graph.currentNode.UpdateActions(this);
         graph.currentNode.UpdateTransitions(this);
-        
+    }
+    private void FixedUpdate() {
+        // update current nodes actions
+        graph.currentNode.FixedUpdateActions(this);
+    }
+
+    private void CheckForTarget() {
+        Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, seeRadius, targetLayers);
+
+        if(targetCollider != null) {
+            target = targetCollider.transform;
+        }
+        else {
+            target = null;
+        }
     }
 
     private void CheckAttackRange() {
@@ -48,21 +65,6 @@ public class StateController : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate() {
-        graph.currentNode.FixedUpdateActions(this);
-    }
-
-    private void CheckForTarget() {
-        Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, seeRadius, targetLayers);
-
-        if(targetCollider != null) {
-            target = targetCollider.transform;
-        }
-        else {
-            target = null;
-        }
-    }
-    
     #region Nodes
     private void Start() {
         // check all nodes for the start node and set the graphs current node to it
