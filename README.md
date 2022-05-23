@@ -1,8 +1,9 @@
-# enemy-state-controller
-A state controller to control enemy AI states using drag and droppable scriptable objects.
+# Enemy State Controller
+
+A node-based state controller for setting up enemy behaviours in unity. Create your own custom actons and conditional state transitions.
 
 
-
-## Links and Resources
-1. https://www.plectica.com/maps/U1MDXC37X
-2. https://docs.google.com/document/d/1-ncEKfm3Iu_ONJ3kEfCf9i8563We6fCu/edit?usp=sharing&ouid=103121775254992522426&rtpof=true&sd=true
+[Download](https://github.com/Kzzkt147/enemy-state-controller/releases)
+<details><summary>Installation</summary>
+	
+</details>
