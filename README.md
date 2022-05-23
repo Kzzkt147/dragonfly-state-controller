@@ -19,16 +19,16 @@ Download the unity package and import it into your unity project.
 
 ## Setting up nodes
 
-1. Create a new behaviour graph in your project folder **(Create>BehaviourGraph)**.
+1. Create a new behaviour graph in your project folder **(Create>BehaviourGraph)**. <br>
 ![Make Graph](images/MakeGraph.gif)
 
-2. Inside the graph, right click to add state nodes. Connect a start node to the state node that the enemy will begin on.
+2. Inside the graph, right click to add state nodes. Connect a start node to the state node that the enemy will begin on. <br>
 ![Create Node](images/CreateNode.gif)
 
-3. Assign an action to the state node and add as many decisions as needed. Actions will dictate what the state controller does when the state is active, and decisions are conditionals - when they are met, it will switch the connected state.
+3. Assign an action to the state node and add as many decisions as needed. Actions will dictate what the state controller does when the state is active, and decisions are conditionals - when they are met, it will switch the connected state.<br>
 ![Setup Node](images/SetupNode.gif)
 
-4. Assign the graph we just created to the state controller on the enemy.
+4. Assign the graph we just created to the state controller on the enemy.<br>
 ![Setup Controller](images/SetupController.gif)
 
 ## Creating Actions and Decisions
