@@ -60,6 +60,7 @@ Create a new script and inherit your class from the abstract 'Decision' class, m
 [CreateAssetMenu(menuName = "Enemy/Decisions/ExampleDecision", fileName = "ExampleDecision")]
 public class ExampleDecision : Decision {
     public override bool HandleDecision(StateController controller) {
+        // this should contain conditional code that will return true or false. 
         return false;
     }
 }
