@@ -2,7 +2,7 @@
 
 A node-based state controller for setting up enemy behaviours in unity. Create your own custom actons and conditional state transitions.
 
-![Node Graph](images/NodeGraph.PNG)
+![Node Graph](img/NodeGraph.PNG)
 
 ## Download
 <details><summary>Download & Installation</summary>
@@ -11,7 +11,7 @@ A node-based state controller for setting up enemy behaviours in unity. Create y
 
 ### Installation
 Download the unity package and import it into your unity project. <br>
-![Package](images/Import.PNG)
+![Package](img/Import.PNG)
 </details>
 <br>
 
@@ -20,16 +20,16 @@ Download the unity package and import it into your unity project. <br>
 ## Setting up nodes
 
 1. Create a new behaviour graph in your project folder **(Create>BehaviourGraph)**. <br>
-![Make Graph](images/MakeGraph.gif)
+![Make Graph](img/MakeGraph.gif)
 
 2. Inside the graph, right click to add state nodes. Connect a start node to the state node that the enemy will begin on. <br>
-![Create Node](images/CreateNode.gif)
+![Create Node](img/CreateNode.gif)
 
 3. Assign an action to the state node and add as many decisions as needed. Actions will dictate what the state controller does when the state is active, and decisions are conditionals - when they are met, it will switch the connected state.<br>
-![Setup Node](images/SetupNode.gif)
+![Setup Node](img/SetupNode.gif)
 
 4. Assign the graph we just created to the state controller on the enemy.<br>
-![Setup Controller](images/SetupController.gif)
+![Setup Controller](img/SetupController.gif)
 
 ## Creating Actions and Decisions
 
@@ -52,7 +52,7 @@ public class ExampleAction : Action {
     }
 }
 ```
-![Create Asset](images/CreateAsset.gif)
+![Create Asset](img/CreateAsset.gif)
 
 ### Decisions
 Create a new script and inherit your class from the abstract 'Decision' class, making sure to implement the abstract methods from 'Decision'. Because this is a scriptable object, add a 'CreateAssetMenu' attribute and create an instance of the class as an object.
