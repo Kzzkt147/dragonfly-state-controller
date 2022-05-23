@@ -10,7 +10,7 @@ A node-based state controller for setting up enemy behaviours in unity. Create y
 [Download](https://github.com/Kzzkt147/enemy-state-controller/releases)
 
 ### Installation
-Download the unity package and import it into your unity project.
+Download the unity package and import it into your unity project. <br>
 ![Package](images/Import.PNG)
 </details>
 <br>
@@ -67,4 +67,4 @@ public class ExampleDecision : Decision {
 ```
 
 ### Extra Notes
-Each action and decision is s scriptable object - meaning that if two enemies share the same action as behaviour, they are sharing the same isntance of that script. To make sure there are no conflicts in their behaviour, do not create any new variables in these scripts and should instead be taking everything from the state controller.
+Each action and decision is s scriptable object - meaning that if two enemies share the same action as behaviour, they are sharing the same instance of that script. To make sure there are no conflicts in their behaviour, do not create any new variables in these scripts and should instead be taking everything from the state controller.
