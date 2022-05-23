@@ -25,11 +25,11 @@ MonoBehaviour:
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: exit
-        node: {fileID: -901776790371290802}
-        reroutePoints: []
       - fieldName: decisions 1
         node: {fileID: -6368356465869389360}
+        reroutePoints: []
+      - fieldName: exit
+        node: {fileID: -901776790371290802}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
       - fieldName: entry
         node: {fileID: -6368356465869389360}
         reroutePoints:
-        - {x: 784, y: -272}
+        - {x: 784, y: -224}
         - {x: 288, y: -256}
       _direction: 1
       _connectionType: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -392, y: -232}
+  position: {x: -440, y: -40}
   ports:
     keys:
     - exit
