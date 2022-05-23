@@ -28,7 +28,7 @@ Download the unity package and import it into your unity project. <br>
 3. Assign an action to the state node and add as many decisions as needed. Actions will dictate what the state controller does when the state is active, and decisions are conditionals - when they are met, it will switch the connected state.<br>
 ![Setup Node](img/SetupNode.gif)
 
-4. Assign the graph we just created to the state controller on the enemy.<br>
+4. Assign the graph we just created to a state controller component placed on an enemy.<br>
 ![Setup Controller](img/SetupController.gif)
 
 ## Creating Actions and Decisions
