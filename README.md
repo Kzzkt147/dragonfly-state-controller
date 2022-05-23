@@ -1,6 +1,8 @@
 # Enemy State Controller
 
-A node-based state controller for setting up enemy behaviours in unity. Create your own custom actons and conditional state transitions.
+A node-based state controller for setting up enemy behaviours in unity. Create new state nodes and add your own actions and conditions to them in a node editor. The state controller will move between connected nodes depending on conditions that you have set on each node.
+
+You can create your own actions and conditions(decisions) to add to these nodes - more info below.
 
 ![Node Graph](img/NodeGraph.PNG)
 
