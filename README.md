@@ -2,7 +2,7 @@
 
 A node-based state controller for setting up enemy behaviours in unity. Create your own custom actons and conditional state transitions.
 
-![Node Graph](images/NodeGraph.png)
+![Node Graph](images/NodeGraph.PNG)
 
 ## Download
 <details><summary>Download & Installation</summary>
