@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(StateController))]
-public class StateTicker : MonoBehaviour {
-
+[RequireComponent(typeof(EnemyController))]
+public class StateTicker : MonoBehaviour 
+{
     private BehaviourGraph _graph;
-    private StateController _controller;
+    private EnemyController _controller;
 
-    private void Awake() {
-        _controller = GetComponent<StateController>();
+    private void Awake() 
+    {
+        _controller = GetComponent<EnemyController>();
         _graph = _controller.graph;
     }
 

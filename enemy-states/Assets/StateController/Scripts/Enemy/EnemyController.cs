@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using XNode;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class StateController : MonoBehaviour {
-
+public class EnemyController : MonoBehaviour 
+{
     public BehaviourGraph graph;
 
     [Header("Targeting")]
@@ -24,38 +21,31 @@ public class StateController : MonoBehaviour {
     //REFERENCES
     [HideInInspector] public Rigidbody2D rigidBody;
 
-    private void Awake() {
+    private void Awake() 
+    {
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    private void Update() {
+    private void Update() 
+    {
         // check for conditionals
         CheckForTarget();
         CheckAttackRange();
 
     }
 
-    private void CheckForTarget() {
-        Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, seeRadius, targetLayers);
+    private void CheckForTarget()
+    {
+        var targetCollider = Physics2D.OverlapCircle(transform.position, seeRadius, targetLayers);
 
-        if(targetCollider != null) {
-            target = targetCollider.transform;
-        }
-        else {
-            target = null;
-        }
+        target = targetCollider != null ? targetCollider.transform : null;
     }
 
-    private void CheckAttackRange() {
-        if(target != null) {
-            Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, attackRadius, targetLayers);
-            if(targetCollider != null) {
-                inAttackRange = true;
-            }
-            else {
-                inAttackRange = false;
-            }
-        }
+    private void CheckAttackRange()
+    {
+        if (target == null) return;
+        var targetCollider = Physics2D.OverlapCircle(transform.position, attackRadius, targetLayers);
+        inAttackRange = targetCollider != null;
     }
 
     private void OnDrawGizmosSelected() {
