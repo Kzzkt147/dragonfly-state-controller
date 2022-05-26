@@ -10,13 +10,6 @@ public class StateNode : BaseNode {
     public Action action;
 
     [Output(dynamicPortList = true)] public Decision[] decisions;
-
-
-    // return info on current node
-    public override string GetString() {
-		return "State";
-	}
-
 	
     
     // will update any actions and transitions of the node when active

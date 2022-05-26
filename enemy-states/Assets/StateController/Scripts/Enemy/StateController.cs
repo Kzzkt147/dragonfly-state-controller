@@ -8,7 +8,7 @@ public class StateController : MonoBehaviour {
 
     public BehaviourGraph graph;
 
-    [Header("Targetting")]
+    [Header("Targeting")]
     public LayerMask targetLayers;
     public float seeRadius;
     [HideInInspector] public Transform target;
@@ -69,7 +69,7 @@ public class StateController : MonoBehaviour {
     private void Start() {
         // check all nodes for the start node and set the graphs current node to it
         foreach(BaseNode node in graph.nodes) {
-            if(node.GetString() == "Start") {
+            if(node is StartNode) {
                 graph.currentNode = node;
                 break;
             }
@@ -79,19 +79,16 @@ public class StateController : MonoBehaviour {
     }
 
     private IEnumerator ParseNode() {
-        string data = graph.currentNode.GetString();
 
-        switch (data) {
+        switch (graph.currentNode) {
 
-            case "Start":
+            case StartNode _:
                 NextNode("exit");
                 break;
-            case "State":
+            case StateNode _:
                 StateNode currentNode = graph.currentNode as StateNode;
                 graph.currentNode = currentNode;
                 graph.currentNode.StartActions(this);
-                break;
-            case "End":
                 break;
         }
 

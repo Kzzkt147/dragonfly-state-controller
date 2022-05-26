@@ -6,22 +6,22 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private float moveSpeed;
-    private Vector2 movement;
+    private Vector2 _movement;
 
-    private Rigidbody2D rbody;
+    private Rigidbody2D _rigidbody;
 
     private void Awake() {
-        rbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate() {
-        if(movement == Vector2.zero) return;
-        rbody.MovePosition(rbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if(_movement == Vector2.zero) return;
+        _rigidbody.MovePosition(_rigidbody.position + _movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
 }
