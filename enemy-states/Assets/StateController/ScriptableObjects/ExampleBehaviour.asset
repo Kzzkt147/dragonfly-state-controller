@@ -184,8 +184,8 @@ MonoBehaviour:
       - fieldName: entry
         node: {fileID: -7367139436759674011}
         reroutePoints:
-        - {x: 407.77155, y: 187.45148}
-        - {x: -96, y: 224}
+        - {x: 416, y: 176}
+        - {x: -96, y: 208}
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0

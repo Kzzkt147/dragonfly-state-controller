@@ -9,12 +9,11 @@ public class DecisionList : Decision {
 
     public override bool HandleDecision(StateController controller) {
 
-        int trueDecisions = 0;
+        foreach(Decision decision in decisionList) 
+            if(!decision.HandleDecision(controller))
+                return false;
+
+        return true;
         
-        for(int i = 0; i < decisionList.Length; i++) {
-            if(decisionList[i].HandleDecision(controller)) trueDecisions++;
-        }
-        if(trueDecisions == decisionList.Length) return true;
-        else return false;
     }
 }
