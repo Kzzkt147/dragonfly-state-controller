@@ -30,7 +30,7 @@ Download the unity package and import it into your unity project. <br>
 3. Assign an action to the state node and add as many decisions as needed. Actions will dictate what the state controller does when the state is active, and decisions are conditionals - when they are met, it will switch the connected state.<br>
 ![Setup Node](img/SetupNode.gif)
 
-4. Add a StateTicker component to your enemy, and assign the graph we created to the EnemyController<br>
+4. Add a StateTicker component to your enemy, and assign the graph we created to the EnemyController.<br>
 ![Setup Controller](img/SetupController.gif)
 
 ## Creating Actions and Decisions
@@ -81,10 +81,9 @@ Each action and decision is a scriptable object - meaning that if two enemies sh
 [MIT License](LICENSE.txt)
 
 # Features Checklist
-### DONE
+### TODO
 - [X] Scriptable Object Actions and Decisions
 - [X] State Controller to use behaviours
 - [X] Node graph to view and create behaviours
-### TODO
-- [ ] Seperate node parser and state controller
-- [ ] More testing with different actions
+- [X] Seperate node parser and state controller
+- [ ] More thorough testing
