@@ -32,14 +32,7 @@ public class StateController : MonoBehaviour {
         // check for conditionals
         CheckForTarget();
         CheckAttackRange();
-        
-        // update current nodes actions and transitions
-        graph.currentNode.UpdateActions(this);
-        graph.currentNode.UpdateTransitions(this);
-    }
-    private void FixedUpdate() {
-        // update current nodes actions
-        graph.currentNode.FixedUpdateActions(this);
+
     }
 
     private void CheckForTarget() {
@@ -64,49 +57,6 @@ public class StateController : MonoBehaviour {
             }
         }
     }
-
-    #region Nodes
-    private void Start() {
-        // check all nodes for the start node and set the graphs current node to it
-        foreach(BaseNode node in graph.nodes) {
-            if(node is StartNode) {
-                graph.currentNode = node;
-                break;
-            }
-        }
-
-        StartCoroutine(ParseNode());
-    }
-
-    private IEnumerator ParseNode() {
-
-        switch (graph.currentNode) {
-
-            case StartNode _:
-                NextNode("exit");
-                break;
-            case StateNode _:
-                StateNode currentNode = graph.currentNode as StateNode;
-                graph.currentNode = currentNode;
-                graph.currentNode.StartActions(this);
-                break;
-        }
-
-        yield return null;
-    }
-
-    public void NextNode(string portFieldName) {
-        // change current node to the node that is connected to 'portFieldName' port
-        foreach(NodePort port in graph.currentNode.Ports) {
-            if(port.fieldName == portFieldName) {
-                graph.currentNode = port.Connection.node as BaseNode;
-                StartCoroutine(ParseNode());
-                break;
-            }
-        }
-        
-    }
-    #endregion
 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.yellow;

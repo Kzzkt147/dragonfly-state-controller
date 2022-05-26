@@ -8,12 +8,11 @@ public class DecisionList : Decision {
     public Decision[] decisionList;
 
     public override bool HandleDecision(StateController controller) {
-
+        
         foreach(Decision decision in decisionList) 
             if(!decision.HandleDecision(controller))
                 return false;
 
         return true;
-        
     }
 }

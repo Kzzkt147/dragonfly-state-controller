@@ -11,6 +11,8 @@ public abstract class BaseNode : Node {
 		return null;
 	}
 
+	public abstract void ParseNode(StateController controller, BehaviourGraph graph);
+
 	// will update any actions and transitions of the node when active
 	public virtual void StartActions(StateController controller) {
 

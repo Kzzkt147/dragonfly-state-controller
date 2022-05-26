@@ -10,8 +10,13 @@ public class StateNode : BaseNode {
     public Action action;
 
     [Output(dynamicPortList = true)] public Decision[] decisions;
-	
-    
+
+    // will setup the node when called
+    public override void ParseNode(StateController controller, BehaviourGraph graph) {
+        graph.currentNode = graph.currentNode as StateNode;
+        graph.currentNode.StartActions(controller);
+    }
+
     // will update any actions and transitions of the node when active
     public override void StartActions(StateController controller) {
         action.StartActions(controller);
@@ -26,7 +31,7 @@ public class StateNode : BaseNode {
 
         for(int i = 0; i < decisions.Length; i++) {
             if(decisions[i].HandleDecision(controller)) {
-                controller.NextNode("decisions " + i);
+                controller.graph.NextNode(controller, "decisions " + i);
                 return;
             }
         }
