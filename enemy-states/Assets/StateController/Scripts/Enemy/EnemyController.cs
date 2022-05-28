@@ -12,7 +12,8 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attacking")]
     public float attackRadius;
-    [HideInInspector] public bool inAttackRange = false;
+
+    [HideInInspector] public bool inAttackRange;
 
     [Header("Movement")]
     public float runSpeed = 3f;
@@ -49,9 +50,10 @@ public class EnemyController : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected() {
+        var position = transform.position;
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, seeRadius);
+        Gizmos.DrawWireSphere(position, seeRadius);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
+        Gizmos.DrawWireSphere(position, attackRadius);
     }
 }

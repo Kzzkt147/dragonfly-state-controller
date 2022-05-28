@@ -7,9 +7,11 @@ public class DecisionList : Decision
 
     public override bool HandleDecision(EnemyController controller) 
     {
-        foreach(var decision in decisionList) 
-            if(!decision.HandleDecision(controller))
-                return false;
+        foreach (var decision in decisionList)
+        {
+            if(!decision.HandleDecision(controller)) return false;
+        }
+            
 
         return true;
     }

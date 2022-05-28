@@ -6,14 +6,13 @@ public class StateNode : BaseNode
 
     [Output(dynamicPortList = true)] public Decision[] decisions;
 
-    // will setup the node when called
+    // setup of the node
     public override void ParseNode(EnemyController controller, BehaviourGraph graph)
     {
         graph.currentNode = graph.currentNode as StateNode;
         if (graph.currentNode != null) graph.currentNode.StartActions(controller);
     }
-
-    // will update any actions and transitions of the node when active
+    
     public override void StartActions(EnemyController controller)
     {
         action.StartActions(controller);
@@ -31,6 +30,7 @@ public class StateNode : BaseNode
     
     public override void UpdateTransitions(EnemyController controller)
     {
+        // for every decision, check if any of them are true - if so, change to state it's connected to
         for(var i = 0; i < decisions.Length; i++)
         {
             if (!decisions[i].HandleDecision(controller)) continue;

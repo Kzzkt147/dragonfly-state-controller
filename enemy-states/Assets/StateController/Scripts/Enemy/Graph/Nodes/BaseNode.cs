@@ -9,8 +9,7 @@ public abstract class BaseNode : Node
 	}
 
 	public abstract void ParseNode(EnemyController controller, BehaviourGraph graph);
-
-	// will update any actions and transitions of the node when active
+	
 	public virtual void StartActions(EnemyController controller)
 	{
 
