@@ -83,6 +83,9 @@ Each action and decision is a scriptable object - meaning that if two enemies sh
 ### License
 [MIT License](LICENSE.txt)
 
+### Pluggable AI Template
+[Unity Pluggable AI Series](https://www.youtube.com/watch?v=cHUXh5biQMg&list=PLX2vGYjWbI0ROSj_B0_eir_VkHrEkd4pi) Formed the basis of the core idea.
+
 # Features Checklist
 ### TODO
 - [X] Scriptable Object Actions and Decisions
