@@ -70,6 +70,9 @@ public class ExampleDecision : Decision {
 
 ### Extra Notes
 Each action and decision is a scriptable object - meaning that if two enemies share the same action as behaviour, they are sharing the same instance of that script. To make sure there are no conflicts in their behaviour, do not create any new variables in these scripts and should instead be taking everything from the state controller.
+<br>
+<br>
+**See example scene for more info on setting things up.**
 
 # Sources
 
