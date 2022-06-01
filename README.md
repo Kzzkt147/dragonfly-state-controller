@@ -1,4 +1,4 @@
-# Enemy State Controller
+# Dragonfly State Controller
 
 A node-based state controller for setting up enemy behaviours in unity. Create new state nodes and add your own actions and conditions to them in a node editor. The state controller will move between connected nodes depending on conditions that you have set on each node.
 
