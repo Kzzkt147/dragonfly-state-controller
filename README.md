@@ -4,7 +4,8 @@ A node-based state controller for setting up enemy behaviours in unity. Create n
 
 You can create your own actions and conditions(decisions) to add to these nodes - more info below.
 
-![Node Graph](img/NodeGraph.PNG)
+![NodeGraph](https://user-images.githubusercontent.com/79820324/178208790-dbe29a2e-e013-4a1b-8272-77a78c0b4a3d.PNG)
+
 
 ## Download
 <details><summary>Download & Installation</summary>
@@ -22,16 +23,20 @@ Download the unity package and import it into your unity project. <br>
 ## Setting up nodes
 
 1. Create a new behaviour graph in your project folder **(Create>BehaviourGraph)**. <br>
-![Make Graph](img/MakeGraph.gif)
+![MakeGraph](https://user-images.githubusercontent.com/79820324/178208717-b8a56636-a856-4753-879e-60ac64857beb.gif)
+
 
 2. Inside the graph, right click to add state nodes. Connect a start node to the state node that the enemy will begin on. <br>
-![Create Node](img/CreateNode.gif)
+![CreateNode](https://user-images.githubusercontent.com/79820324/178208811-f9e5f8d4-0e20-4626-9656-29d04aea205a.gif)
+
 
 3. Assign an action to the state node and add as many decisions as needed. Actions will dictate what the state controller does when the state is active, and decisions are conditionals - when they are met, it will switch the connected state.<br>
-![Setup Node](img/SetupNode.gif)
+![SetupNode](https://user-images.githubusercontent.com/79820324/178208829-368220c5-4460-4375-a6ad-2f72572edb4e.gif)
+
 
 4. Add a StateTicker component to your enemy, and assign the graph we created to the EnemyController.<br>
-![Setup Controller](img/SetupController.gif)
+![SetupController](https://user-images.githubusercontent.com/79820324/178208846-6474e0cf-0a7f-4b70-b307-aff6b0d9c392.gif)
+
 
 ## Creating Actions and Decisions
 
@@ -54,7 +59,8 @@ public class ExampleAction : Action {
     }
 }
 ```
-![Create Asset](img/CreateAsset.gif)
+![CreateAsset](https://user-images.githubusercontent.com/79820324/178208864-e30e8431-d7db-4f8f-8721-424109bac2fc.gif)
+
 
 ### Decisions
 Create a new script and inherit your class from the abstract 'Decision' class, making sure to implement the abstract methods from 'Decision'. Because this is a scriptable object, add a 'CreateAssetMenu' attribute and create an instance of the class as an object. When returning true, the state controller will change the current state to the state that is connected to this decision.
